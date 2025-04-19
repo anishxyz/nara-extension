@@ -1,5 +1,14 @@
 # CIS 3500: Nara Extension Starter
 
+## Features added: 
+
+Gratitude Log:
+Text prompt/input to write something you are thankful for when opening a new tab
+List view to see all your log entries
+
+Inspirational Quote:
+When opening a new tab, see a inspirational quote at the top of the page
+
 ## Overview
 This assignment involves enhancing a Chrome extension developed by one of the Top 3 winners of the MCIT hackathon. The project provides hands-on experience in web development, API integration, and collaborative coding.
 
