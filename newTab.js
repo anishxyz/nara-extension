@@ -701,8 +701,7 @@ document.addEventListener("DOMContentLoaded", () => {
             // Create and show thank you message
             const thankYouMessage = document.createElement("div");
             thankYouMessage.className = "thank-you-message";
-            thankYouMessage.textContent =
-              "Thank you for taking good care of me";
+            thankYouMessage.textContent = "Thank you for taking good care of me";
             document.body.appendChild(thankYouMessage);
           });
         } else {
@@ -949,4 +948,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
     tasksContainer.classList.remove("hidden");
   }
+
+  // --- Gratitude Log Logic --- //
+  const gratitudeInput = document.getElementById('gratitude-input');
+  const saveGratitudeButton = document.getElementById('save-gratitude');
+  const viewGratitudeLogButton = document.getElementById('view-gratitude-log'); // Get the view button
+
+  if (saveGratitudeButton) {
+    saveGratitudeButton.addEventListener('click', () => {
+      const gratitudeText = gratitudeInput.value.trim();
+      if (gratitudeText) {
+        const today = new Date().toLocaleDateString(); // Get date in locale format
+        const newEntry = { date: today, text: gratitudeText };
+
+        // Get existing entries, add the new one, and save
+        chrome.storage.local.get({ gratitudeEntries: [] }, (result) => {
+          const entries = result.gratitudeEntries;
+          entries.push(newEntry);
+          chrome.storage.local.set({ gratitudeEntries: entries }, () => {
+            console.log('Gratitude entry saved:', newEntry);
+            gratitudeInput.value = ''; // Clear the textarea
+            // Optional: Add visual feedback like a temporary message
+            alert('Gratitude saved!'); 
+          });
+        });
+      } else {
+        alert('Please write something you are grateful for.');
+      }
+    });
+  }
+
+  // Add listener for the view log button
+  if (viewGratitudeLogButton) {
+      viewGratitudeLogButton.addEventListener('click', () => {
+          window.location.href = 'gratitudeLog.html'; // Navigate to the log page
+      });
+  }
+  // --- End Gratitude Log Logic --- //
 });
