@@ -985,4 +985,58 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   }
   // --- End Gratitude Log Logic --- //
+
+  // --- Inspirational Quotes --- Fetch and display a random quote ---
+  const quotes = [
+    "The best way to predict the future is to create it.",
+    "Believe you can and you're halfway there.",
+    "Strive not to be a success, but rather to be of value.",
+    "The mind is everything. What you think you become.",
+    "An unexamined life is not worth living.",
+    "Your limitation—it's only your imagination.",
+    "Push yourself, because no one else is going to do it for you.",
+    "Great things never come from comfort zones.",
+    "Dream it. Wish it. Do it.",
+    "Success doesn’t just find you. You have to go out and get it.",
+    "The only way to do great work is to love what you do.",
+    "Don't watch the clock; do what it does. Keep going.",
+    "Act as if what you do makes a difference. It does.",
+    "The harder the conflict, the greater the triumph.",
+    "It always seems impossible until it's done.",
+    "The journey of a thousand miles begins with a single step.",
+    "What you get by achieving your goals is not as important as what you become by achieving your goals.",
+    "Either you run the day or the day runs you.",
+    "Life is 10% what happens to us and 90% how we react to it.",
+    "The purpose of our lives is to be happy.",
+    "Do one thing every day that scares you.",
+    "You must be the change you wish to see in the world.",
+    "What lies behind us and what lies before us are tiny matters compared to what lies within us.",
+    "Happiness is not something ready made. It comes from your own actions.",
+    "The only source of knowledge is experience.",
+    "Problems are not stop signs, they are guidelines.",
+    "If you want to lift yourself up, lift up someone else.",
+    "The best revenge is massive success.",
+    "I have not failed. I've just found 10,000 ways that won't work.",
+    "We know what we are, but know not what we may be.",
+    "Our greatest glory is not in never failing, but in rising up every time we fail.",
+    "Everything you’ve ever wanted is on the other side of fear.",
+    "To live is the rarest thing in the world. Most people exist, that is all.",
+    "The future belongs to those who believe in the beauty of their dreams.",
+    "It is never too late to be what you might have been.",
+    "Strive for progress, not perfection.",
+    "Keep your face always toward the sunshine—and shadows will fall behind you.",
+    "What we think, we become.",
+    "Wherever you go, go with all your heart.",
+    "Be yourself; everyone else is already taken."
+  ];
+
+  function displayRandomQuote() {
+    if (document.getElementById('quote-text')) {
+      const randomIndex = Math.floor(Math.random() * quotes.length);
+      document.getElementById('quote-text').textContent = `"${quotes[randomIndex]}"`;
+    }
+  }
+
+  // Display quote on load
+  displayRandomQuote();
 });

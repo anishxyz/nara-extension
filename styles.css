@@ -55,7 +55,7 @@ body {
 
 #welcome-message {
     position: fixed;
-    top: 20%;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -71,6 +71,7 @@ body {
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
     opacity: 0.95;
     animation: welcomeFadeIn 1s ease-out forwards;
+    z-index: 0;
 }
 
 /* Categories container */
