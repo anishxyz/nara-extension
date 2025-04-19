@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gratitude Log</title>
+    <link rel="stylesheet" href="styles.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styles specific to gratitude log page */
+        body {
+            background-color: #282c34; /* Dark background */
+            color: #f0f0f0; /* Light text */
+            font-family: 'Poppins', sans-serif;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #61dafb; /* Accent color */
+        }
+        #log-container {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .log-entry {
+            background-color: rgba(255, 255, 255, 0.1);
+            margin-bottom: 15px;
+            padding: 15px;
+            border-radius: 5px;
+            border-left: 5px solid #61dafb;
+        }
+        .log-entry .date {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+            color: #aaa;
+        }
+         .log-entry .text {
+            line-height: 1.6;
+        }
+        a.back-link {
+            display: block;
+            text-align: center;
+            margin-top: 30px;
+            color: #add8e6;
+            text-decoration: none;
+        }
+        a.back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>My Gratitude Log</h1>
+    <div id="log-container">
+        <!-- Gratitude entries will be loaded here -->
+        <p>Loading entries...</p> 
+    </div>
+
+    <a href="newTab.html" class="back-link">Back to Main Page</a>
+
+    <script src="gratitudeLog.js"></script>
+</body>
+</html>
